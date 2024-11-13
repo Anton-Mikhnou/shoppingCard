@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'Mindcontrol';
+    src: url(MINDCONTROL.woff2);
+}
+
+@font-face{
+    font-family: 'Inter';
+    src: url(Inter-VariableFont_opsz\,wght.woff2);
+}
+
+@font-face{
+    font-family: 'Readex Pro';
+    src: url(ReadexPro-VariableFont_HEXP\,wght.woff2);
+}
+
+:root {
+    --primary: black;
+    --logo-font-size: 30px;
+    --logo-font-family: 'Mindcontrol';
+    --link-font-family: 'Inter'
+}
