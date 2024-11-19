@@ -1,7 +1,7 @@
 import style from './Slider.module.scss'
 import ButtonNext from '../../UI/buttonNext/ButtonNext'
 import ButtonPrev from '../../UI/buttonPrev/ButtonPrev'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 
 interface SliderArray {
     id: number,

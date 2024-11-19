@@ -54,7 +54,7 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
-    flex-shrink: 0;
+    // flex-shrink: 0;
 }
 
 .button-container{
@@ -89,4 +89,29 @@ button:hover {
     left: -10px;
     right: -10px;
     bottom: -10px;
-  }
+}
+
+@media screen and (max-width: 390px) {
+    .container-Slider{
+        padding: 15px 25px;
+    }
+
+    .container__inner {
+        max-width: 329px;
+        height: 250px;
+    }
+
+    .description {
+        width: 50%;
+        height: 100%;
+        padding: 15px;
+    }
+
+    .description h1 {
+        font-size: 15px;
+        font-weight: 400;
+        width: 100%;
+        height: 100%;
+        
+    }
+}
