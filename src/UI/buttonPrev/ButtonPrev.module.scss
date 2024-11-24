@@ -1,21 +1,27 @@
-.buttonNext{
+.buttonPrev{
     width: 20px;
     height: 20px;
     border: none;
     border-right: 3px solid;
     border-bottom: 3px solid;
     background-color: transparent;
-    position: absolute;
     transform: rotate(135deg);
-    top: 50%;
-    left: 2%;
+    margin-left: 25px;
 }
 
-.buttonNext:hover {
+.buttonPrev:hover {
     cursor: pointer;
     opacity: 0.7;
 }
 
 button:focus {
     outline: none; 
+}
+
+@media screen and (max-width: 390px) {
+    .buttonPrev{
+        width: 15px;
+        height: 15px;
+        margin-left: 15px;
+    }
 }

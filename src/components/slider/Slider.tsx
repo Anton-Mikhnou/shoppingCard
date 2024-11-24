@@ -71,7 +71,6 @@ export default function Slider() {
         <>
             <div className={style['container-Slider']}>
                 <div className={style['container__inner']}>
-                    <ButtonNext func={HandleClickNext}/>
                     {sliderArray.map((slider) => {
                         return (
                             <div key={slider.id} className={style['slider-content']} style={{ transform: `translateX(-${index * 100}%)`}}>
@@ -86,7 +85,10 @@ export default function Slider() {
                             </div>
                         )
                     })}
-                    <ButtonPrev func={HandleClickPrev}/>
+                    <div className={style['slider__control']}>
+                        <ButtonPrev func={HandleClickPrev}/>
+                        <ButtonNext func={HandleClickNext}/>
+                    </div>
                     <div className={style['button-container']}>
                         <button key={0} onClick={() => setIndex(0)} style={{backgroundColor: buttonColor(0)}}></button>
                         <button key={1} onClick={() => setIndex(1)} style={{backgroundColor: buttonColor(1)}} ></button>

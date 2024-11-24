@@ -5,11 +5,8 @@
     border-right: 3px solid;
     border-bottom: 3px solid;
     background-color: transparent;
-    position: absolute;
     transform: rotate(-45deg);
-    top: 50%;
-    left: 97%;
-    z-index: 1;
+    margin-right: 25px;
 }
 
 .buttonNext:hover {
@@ -19,4 +16,12 @@
 
 button:focus {
     outline: none; 
+}
+
+@media screen and (max-width: 390px) {
+    .buttonNext{
+        width: 15px;
+        height: 15px;
+        margin-left: 15px;
+    }
 }

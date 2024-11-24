@@ -7,7 +7,7 @@ interface ButtonProp {
 export default function ButtonNext({func}: ButtonProp) {
     return (
         <>
-            <button className={style['buttonNext']} onClick={func}></button>
+            <button className={style['buttonPrev']} onClick={func}></button>
         </>
     )
 }
