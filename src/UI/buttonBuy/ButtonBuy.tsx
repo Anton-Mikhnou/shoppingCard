@@ -1,10 +1,15 @@
 import style from './ButtonBuy.module.scss';
 
-export default function ButtonBuy() {
+
+interface ButtonProps {
+    handleBuy: () => void;
+}
+
+export default function ButtonBuy({handleBuy}: ButtonProps) {
     
     return(
         <>
-            <button className={style['addToCart']}>Add to Cart</button>
+            <button className={style['addToCart']} onClick={handleBuy}>Add to Cart</button>
         </>
     )
 }

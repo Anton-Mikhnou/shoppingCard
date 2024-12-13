@@ -2,6 +2,9 @@ import ButtonAdd from '../../UI/buttonAdd/ButtonAdd'
 import ButtonBuy from '../../UI/buttonBuy/ButtonBuy'
 import ButtonDiminish from '../../UI/buttonDiminish/buttonDiminish'
 import style from './Card.module.scss'
+import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { increment } from '../../modules/counterSlice' 
+import { useState } from 'react'
 
 interface CardProps {
     name: string;
@@ -10,6 +13,32 @@ interface CardProps {
 }
 
 export default function Card({name, url, price }: CardProps) {
+    const [quality, setQuality] = useState<number>(0);
+    const dispatch = useAppDispatch();
+
+
+    const handelInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
+        const value: number = parseInt(event.currentTarget.value, 10) || quality;
+
+        setQuality(value);
+    }
+
+    function handleSabtractCount() {
+        if(quality === 0) {
+            return
+        }
+        setQuality(quality => quality - 1);        
+    }
+
+    function handleAddCount() {
+        setQuality(quality => quality + 1);        
+    }
+
+    
+    function handleBuy() {
+        dispatch(increment(quality));
+    }
+    
     return (
         <>
         <div className={style['wrapper']}>
@@ -22,11 +51,11 @@ export default function Card({name, url, price }: CardProps) {
                     <h3>${price}</h3>
                     <div className={style['description__buttons']}>
                         <div>
-                            <ButtonDiminish/>
-                            <input type="number" />
-                            <ButtonAdd/>
+                            <ButtonDiminish handleSabtractCount={handleSabtractCount}/>
+                            <input type="number"  value={quality} onChange={handelInputChange}/>
+                            <ButtonAdd handleAddCount={handleAddCount}  />
                         </div>
-                        <ButtonBuy/>
+                        <ButtonBuy handleBuy={handleBuy}/>
                     </div>
                 </div>
             </div>

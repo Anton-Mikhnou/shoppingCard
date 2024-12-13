@@ -1,9 +1,14 @@
 import style from './ButtonAdd.module.scss';
 
-export default function ButtonAdd() {
+interface ButtonProps {
+    handleAddCount: () => void;
+}
+
+export default function ButtonAdd({handleAddCount}: ButtonProps) {
+    
     return(
         <>
-            <button className={style['buttonAdd']}>+</button>
+            <button className={style['buttonAdd']}  onClick={handleAddCount}>+</button>
         </>
     )
 }
