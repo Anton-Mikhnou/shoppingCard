@@ -31,6 +31,23 @@
     opacity: 1;
 }
 
+.card{
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    top: -6px;
+    right: -4px;
+    background-color: #ff3500;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @media (max-width:390px) {
     .header{
         padding: 0 8px;

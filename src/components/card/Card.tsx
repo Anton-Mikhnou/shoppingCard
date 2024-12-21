@@ -2,14 +2,14 @@ import ButtonAdd from '../../UI/buttonAdd/ButtonAdd'
 import ButtonBuy from '../../UI/buttonBuy/ButtonBuy'
 import ButtonDiminish from '../../UI/buttonDiminish/buttonDiminish'
 import style from './Card.module.scss'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { useAppDispatch } from '../../app/hooks'
 import { increment } from '../../modules/counterSlice' 
 import { useState } from 'react'
 
 interface CardProps {
     name: string;
     url: string;
-    price: string
+    price: string;
 }
 
 export default function Card({name, url, price }: CardProps) {
