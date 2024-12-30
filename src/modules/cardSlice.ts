@@ -1,8 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-// export interface CardState {
-//     value: Array<ObjectType>
-// }
+import { RootState } from "../app/store";
 
 interface ObjectType {
     category: string;
@@ -14,8 +11,21 @@ interface ObjectType {
     title: string;
 }
 
-const state: Array<ObjectType> = []
+const initialState: ObjectType[] = []
 
+const cardSlice = createSlice({
+    name: 'card',
+    initialState,
 
+    reducers: {
+        setCards: (state, action: PayloadAction<ObjectType[]>) => {
+            return action.payload;
+        }
+    }
+})
 
+export const {setCards} = cardSlice.actions;
+export default cardSlice.reducer;
+
+export const selectCard = (state: RootState) => state.card;
 
