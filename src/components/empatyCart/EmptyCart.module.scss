@@ -1,0 +1,14 @@
+.empty {
+    // background-color: rgba(100, 108, 255, 0.3);
+    width: 350px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid;
+
+    p {
+        font-family: 'Inter';
+    }
+}

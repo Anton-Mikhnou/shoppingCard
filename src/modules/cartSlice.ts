@@ -3,6 +3,9 @@ import type { RootState } from "../app/store";
 
 interface CartType {
     id: number;
+    title: string;
+    url: string;
+    price: number;
     quality: number;
 }
 
@@ -14,21 +17,55 @@ const cartSlice = createSlice({
     initialState,
 
     reducers: {
-        addToCart: (state, action:PayloadAction<{id:number, quality:number}> ) => {
-            const {id, quality} = action.payload;
+        addToCart: (state, action:PayloadAction<CartType> ) => {
+            const existingItem = state.find(item => item.id === action.payload.id);
 
-            const existingItem = state.find(item => item.id === id);
             
             if(existingItem) {
-                existingItem.quality += quality;
+                existingItem.quality += action.payload.quality;
             } else {
-                state.push({id, quality});
+                state.push(action.payload);
+            }
+        },
+
+        deleteCart: (state, action:PayloadAction<number>) => {
+
+            const removeItem = findCartItem(state, action.payload);
+
+            if(removeItem) {
+                const index = state.indexOf(removeItem);
+                state.splice(index, 1);
+            }
+        },
+
+        incrementQuality: (state, action:PayloadAction<number>) => {
+
+            const existingItem = findCartItem(state, action.payload);
+            if(existingItem) existingItem.quality += 1;
+        },
+
+        decrementQuality: (state, action:PayloadAction<number>) => {
+
+            const existingItem = findCartItem(state, action.payload)
+            if(existingItem) existingItem.quality -= 1;
+        },
+
+        settQuality: (state, action: PayloadAction<{ id: number; quality: number }>) => {
+
+            const existingItem = state.find(item => item.id === action.payload.id);
+
+            if (existingItem) {
+                existingItem.quality = action.payload.quality;
             }
         }
     }
 })
 
-export const {addToCart} = cartSlice.actions;
+const findCartItem = (state: Array<CartType>, id: number) => {
+    return state.find(item => item.id === id);
+};
+
+export const {addToCart, deleteCart, incrementQuality, decrementQuality, settQuality} = cartSlice.actions;
 
 export default cartSlice.reducer;
 

@@ -1,6 +1,6 @@
 import HomePage from "./pages/HomePage";
 import ShopePage from "./pages/ShopPage";
-import CagePage from "./pages/CagePage";
+import CagePage from "./pages/CartPage";
 
 const routes = [
     {

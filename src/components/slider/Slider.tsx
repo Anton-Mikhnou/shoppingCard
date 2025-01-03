@@ -30,8 +30,8 @@ export default function Slider() {
         }
     ]
 
-    let hasPrev = index > 0;
-    let hasNext = index < sliderArray.length - 1;
+    const hasPrev = index > 0;
+    const hasNext = index < sliderArray.length - 1;
 
     function HandleClickNext(): void {
         if(hasNext) {

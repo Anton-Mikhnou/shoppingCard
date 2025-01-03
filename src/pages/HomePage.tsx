@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import style from './Page.module.scss'
 import Header from "../components/header/Header"
 import Slider from "../components/slider/Slider"
