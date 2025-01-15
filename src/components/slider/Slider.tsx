@@ -86,8 +86,8 @@ export default function Slider() {
                         )
                     })}
                     <div className={style['slider__control']}>
-                        <ButtonPrev func={HandleClickPrev}/>
-                        <ButtonNext func={HandleClickNext}/>
+                        <ButtonPrev handlePrev={HandleClickPrev}/>
+                        <ButtonNext handleNext={HandleClickNext}/>
                     </div>
                     <div className={style['button-container']}>
                         <button key={0} onClick={() => setIndex(0)} style={{backgroundColor: buttonColor(0)}}></button>

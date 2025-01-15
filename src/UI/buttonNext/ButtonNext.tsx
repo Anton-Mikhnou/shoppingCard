@@ -1,13 +1,13 @@
 import style from './ButtonNext.module.scss'
 
 interface ButtonProp {
-    func: () => void
+    handleNext: () => void
 }
 
-export default function ButtonNext({func}: ButtonProp) {
+export default function ButtonNext({handleNext}: ButtonProp) {
     return (
         <>
-            <button className={style['buttonNext']} onClick={func}></button>
+            <button className={style['buttonNext']} onClick={handleNext}></button>
         </>
     )
 }

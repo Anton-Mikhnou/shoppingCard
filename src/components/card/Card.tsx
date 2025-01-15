@@ -1,6 +1,6 @@
 import ButtonAdd from "../../UI/buttonAdd/ButtonAdd";
 import ButtonBuy from "../../UI/buttonBuy/ButtonBuy";
-import ButtonDiminish from "../../UI/buttonDiminish/buttonDiminish";
+import ButtonDiminish from "../../UI/buttonDiminish/ButtonDiminish";
 import style from "./Card.module.scss";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { increment, decrement } from "../../modules/counterSlice";
@@ -93,7 +93,7 @@ export default function Card({ title, url, price, id }: CardProps) {
             <div className={style["wrapper"]}>
                 <div className={style["container"]}>
                     <div className={style["container__img"]}>
-                        <img src={url} alt="" />
+                        <img src={url} alt="product" />
                     </div>
                     <div className={style["description"]}>
                         <h2>{title}</h2>
