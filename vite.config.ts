@@ -9,6 +9,7 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './tests/setup.ts',
+    include: ['src/**/*.test.{ts,tsx}', 'src/**/*.spec.{ts,tsx}']
   },
   css: {
     preprocessorOptions: {

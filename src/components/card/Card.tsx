@@ -10,7 +10,7 @@ import {
     deleteCart,
     incrementQuality,
     decrementQuality,
-    settQuality,
+    setQualityCart,
     selectCart,
 } from "../../modules/cartSlice";
 import DeleteButton from "../../UI/deleteButton/DeleteButton";
@@ -31,9 +31,7 @@ export default function Card({ title, url, price, id }: CardProps) {
 
     const contains = carts.find((cart) => cart.id === id);
 
-    const handelInputChange = (
-        event: React.FormEvent<HTMLInputElement>
-    ): void => {
+    const handelInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
         const value: number = Number(event.currentTarget.value);
 
         if (value < 0) return;
@@ -41,9 +39,9 @@ export default function Card({ title, url, price, id }: CardProps) {
         if (contains) {
             dispatch(decrement(quality));
             dispatch(increment(value));
-            dispatch(settQuality({ id, quality: value }));
+            dispatch(setQualityCart({ id, quality: value }));
         } else {
-            dispatch(settQuality({ id, quality: value }));
+            dispatch(setQualityCart({ id, quality: value }));
         }
 
         setQuality(value);
@@ -70,14 +68,18 @@ export default function Card({ title, url, price, id }: CardProps) {
     }
 
     function handleBuy() {
-        dispatch(increment(quality));
+        const quantityToAdd = quality > 0 ? quality : 1;
+        if (quality === 0) {
+            setQuality(1);
+        }
+        dispatch(increment(quantityToAdd));
         dispatch(
             addToCart({
                 id: id,
                 title: title,
                 url: url,
                 price: price,
-                quality: quality,
+                quality: quantityToAdd,
             })
         );
     }

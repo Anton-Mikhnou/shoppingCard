@@ -50,7 +50,7 @@ const cartSlice = createSlice({
             if(existingItem) existingItem.quality -= 1;
         },
 
-        settQuality: (state, action: PayloadAction<{ id: number; quality: number }>) => {
+        setQualityCart: (state, action: PayloadAction<{ id: number; quality: number }>) => {
 
             const existingItem = state.find(item => item.id === action.payload.id);
 
@@ -65,7 +65,7 @@ const findCartItem = (state: Array<CartType>, id: number) => {
     return state.find(item => item.id === id);
 };
 
-export const {addToCart, deleteCart, incrementQuality, decrementQuality, settQuality} = cartSlice.actions;
+export const {addToCart, deleteCart, incrementQuality, decrementQuality, setQualityCart} = cartSlice.actions;
 
 export default cartSlice.reducer;
 
