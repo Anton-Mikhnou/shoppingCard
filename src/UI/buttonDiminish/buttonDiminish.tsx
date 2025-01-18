@@ -1,4 +1,4 @@
-import style from './buttonDiminish.module.scss';
+import style from './ButtonDiminish.module.scss';
 
 interface ButtonProps {
     handleSabtractCount: () => void;
