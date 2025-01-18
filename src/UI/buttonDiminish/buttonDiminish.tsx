@@ -4,7 +4,7 @@ interface ButtonProps {
     handleSabtractCount: () => void;
 }
 
-export default function buttonDiminish({handleSabtractCount}: ButtonProps) {
+export default function ButtonDiminish({handleSabtractCount}: ButtonProps) {
 
     return(
         <>
