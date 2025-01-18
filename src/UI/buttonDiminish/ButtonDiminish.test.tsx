@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import ButtonDiminish from "./ButtonDiminish.tsx";
+import ButtonDiminish from "./ButtonDiminish";
 import userEvent from "@testing-library/user-event";
 
 describe('ButtonDiminish component', () => {

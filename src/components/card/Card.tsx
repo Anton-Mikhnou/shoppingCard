@@ -1,6 +1,6 @@
 import ButtonAdd from "../../UI/buttonAdd/ButtonAdd";
 import ButtonBuy from "../../UI/buttonBuy/ButtonBuy";
-import ButtonDiminish from "../../UI/buttonDiminish/ButtonDiminish.tsx";
+import ButtonDiminish from "../../UI/buttonDiminish/ButtonDiminish";
 import style from "./Card.module.scss";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { increment, decrement } from "../../modules/counterSlice";
