@@ -18,6 +18,7 @@ const cardSlice = createSlice({
     initialState,
 
     reducers: {
+        // @ts-expect-error Type mismatch due to Redux Toolkit behavior
         setCards: (state, action: PayloadAction<ObjectType[]>) => {
             return action.payload;
         }
