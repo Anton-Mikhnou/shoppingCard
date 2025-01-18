@@ -8,7 +8,7 @@ export default function ButtonAdd({handleAddCount}: ButtonProps) {
     
     return(
         <>
-            <button className={style['buttonAdd']}  onClick={handleAddCount}>+</button>
+            <button className={style['buttonAdd']} id='buttonAdd' onClick={handleAddCount}>+</button>
         </>
     )
 }

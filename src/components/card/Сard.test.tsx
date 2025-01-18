@@ -134,6 +134,3 @@ describe('Card component', () => {
         expect(dispatch).toHaveBeenCalledWith({type: 'cart/deleteCart', payload: data.id});
     });
 })
-
-
-

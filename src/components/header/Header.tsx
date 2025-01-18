@@ -2,9 +2,9 @@ import style from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import { selectCount } from '../../modules/counterSlice';
 import { useAppSelector } from '../../app/hooks';
-// @ts-ignore
+// @ts-expect-error: SVG imports might not have proper TypeScript typings
 import Carts from '../../assets/carts.svg?react';
-// @ts-ignore
+// @ts-expect-error: SVG imports might not have proper TypeScript typings
 import Magnify from '../../assets/magnify.svg?react';
 
 export default function Header() {
@@ -19,8 +19,8 @@ export default function Header() {
                 <div className={style['containerl-icon']}>
                     <Magnify className={style['svg-header']} width='30'/>
                     <div className={style['card']}>
-                        <Link to={'/cage'}><Carts className={style['svg-header']} width='30'/></Link>
-                        <div className={style['counter']}>{count}</div>
+                        <Link to={'/cart'} id='shop-link'><Carts className={style['svg-header']} width='30'/></Link>
+                        <div className={style['counter']} id='counter'>{count}</div>
                     </div>
                 </div>
             </header>

@@ -12,7 +12,7 @@ const routes = [
         element: <ShopePage/>
     },
     {
-        path: 'cage',
+        path: 'cart',
         element: <CagePage/>
     }
 ];

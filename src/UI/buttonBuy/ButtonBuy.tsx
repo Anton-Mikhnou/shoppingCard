@@ -9,7 +9,7 @@ export default function ButtonBuy({handleBuy}: ButtonProps) {
     
     return(
         <>
-            <button className={style['addToCart']} onClick={handleBuy}>Add to Cart</button>
+            <button className={style['addToCart']} id='addToCart' onClick={handleBuy}>Add to Cart</button>
         </>
     )
 }

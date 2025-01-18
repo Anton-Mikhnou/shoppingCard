@@ -7,7 +7,7 @@ interface ButtonProps {
 export default function DeleteButton({handleDelete}: ButtonProps) {
     return (
         <>
-            <button className={style['delete']} onClick={handleDelete}>Delete</button>
+            <button className={style['delete']} id='delteButton' onClick={handleDelete}>Delete</button>
         </>
     )
 }
